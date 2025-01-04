@@ -4,7 +4,7 @@ O projeto é uma aplicação full-stack local que funciona com requisições ao 
 
 ## Tecnologias
 
-[![Minhas Habilidades](https://skillicons.dev/icons?i=spring,mysql,html,css)](https://skillicons.dev)
+[![Minhas Habilidades](https://skillicons.dev/icons?i=spring,html,css)](https://skillicons.dev)
 
 # Setup da aplicação (local)
 
