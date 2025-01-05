@@ -1,10 +1,10 @@
 # Visão geral
 
-O projeto é uma aplicação full-stack local que funciona com requisições ao banco de dados e exibição do resultado no Front-end da aplicação.
+O projeto é uma aplicação full-stack local que realiza requisições ao banco de dados, processa os dados no back-end e exibe os resultados no front-end, proporcionando uma interação fluida e integrada entre as camadas da aplicação.
 
 ## Tecnologias
 
-[![Minhas Habilidades](https://skillicons.dev/icons?i=spring)](https://skillicons.dev)
+[![Minhas Habilidades](https://skillicons.dev/icons?i=spring,html,css,postgre)](https://skillicons.dev)
 
 # Setup da aplicação (local)
 
@@ -16,7 +16,6 @@ Spring Boot Starter Data JPA
 Spring Boot Starter Web
 PostgreSQL Driver
 Spring Boot Starter Test
-
 ```
 
 ## Preparando ambiente
@@ -40,7 +39,6 @@ hibernate.dialect=org.hibernate.dialect.HSQLDialect
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.format-sql=true
-
 ```
 
 E por último, realizar a inserção dos dados no seu banco de dados local conforme o arquivo 'dados_db.csv'
@@ -82,127 +80,20 @@ Antes de rodar a aplicação é preciso garantir que as seguintes dependências 
 
 ```
 Java 8
-Docker 17.06.0 
 Maven 3.3.3 
 ```
 
-## Preparando ambiente
+# Resposta requisição
 
-Criar e executar container do Posgres
-```
- docker run -d \
-    --name productivity-postgres \
-    -e POSTGRES_DB=productivity-with-spring \
-    -e POSTGRES_USER=postgres \
-    -e POSTGRES_PASSWORD=postgres \
-   postgres:9.6
-```
-
-Criar e executar container do MongoDB
-```
-docker run -d \
-    --name productivity-mongodb \
-   mongo:3.5
-```
-
-## Instalação da aplicação
-
-Baixar as dependência e criar imagem da aplicação
+O retorno esperada será uma frase de um filme/série determinado aleatóriamente pela aplicação
 
 ```
-mvn clean package -Dmaven.test.skip=true dockerfile:build
+{
+    "titulo": "Narcos",
+    "frase": "As mentiras são necessárias quando a verdade é muito difícil de crer.",
+    "personagem": "Pablo Escobar",
+    "poster": "https://cdn.pensador.com/img/imagens/na/rc/narcos_0_c.jpg?auto_optimize=low&width=655"
+}
+
 ```
 
-Executar container da aplicação
-
-```
-docker run -it \
-    --link productivity-postgres  \
-    --link productivity-mongodb  \
-    -p 8080:8080 \
-    emmanuelneri/productivity-with-spring-app 
-```
-
-Pronto. A aplicação está disponível em http://localhost:8080
-
-# APIs
-
-O projeto disponibiliza algumas APIs em 3 contextos diferentes: Customer, Carriers e BilLs, onde utilizam o padrão Rest de comunicação, produzindo e consumindo arquivos no formato JSON.
-
-Segue abaixo as APIs disponíveis no projeto:
-
-#### Customer
-
- - /customers/search (GET)
- - /customers (GET)
- - /customers/paged/{page}/{size} (GET)
- - /customers/search/pagenable (POST)
-     - Espera atributos para serem critérios de busca no body da requisição, exemplo:
-    ```
-    {
-      "name":"Customer"
-    }
-    ```
-
-#### Carriers
-
- - /carriers (GET)
- 
- #### Bills
- 
-  - /bills/{id} (DELETE)
-  - /bills (GET)
-  - /bills/byUk/{customerId}/{identifier}/{yearMonth} (GET)
-  - /bills/{id} (GET)
-  - /bills/search (POST)
-    - Espera atributos para serem critérios de busca no body da requisição, exemplo:
-      ```
-         {
-           "initYearMonth":"2017-01",
-           "endYearMonth":"2017-07"
-         }
-         ```
-  - /bills  (POST)
-    - Espera as informações do modelo de dados Bill, exemplo:
-        ```
-             {
-               "customer":{
-                 "id":1,
-                 "name":"Customer 1"
-               },
-               "carrier":{
-                 "id":1,
-                 "name":"TIM"
-               },
-               "identifier":"29302",
-               "yearMonth":"2017-07",
-               "items":[
-                 {
-                 "dataTime":"2017-07-01 15:30:00",
-                 "description":"Ligação fora do plano",
-                 "originNumber":"4499898484",
-                 "destinationNumber":"1199848248",
-                 "duration":"10",
-                 "value":"50",
-                 "type":"SERVICE"
-                 },
-                 {
-                   "dataTime":"2017-07-15 00:00:00",
-                   "description":"Pacote",
-                   "originNumber":"4499898484",
-                   "value":"50",
-                   "type":"SERVICE"
-                 }
-               ],
-               "total":70.00
-             }
-        ```                
-
-#### File Bills
-
- - /files/bills (GET)
- - /files/bills (POST)
-    - Espera as informações de Bill como um arquivo, exemplo:
-    ```
-    {"customer":{"id":1,"name":"Customer 1"},"carrier":{"id":1,"name":"TIM"},"identifier":"29302","yearMonth":"2017-07","items":[{"dataTime":"2017-07-01 15:30:00","description":"Ligação fora do plano","originNumber":"4499898484","destinationNumber":"1199848248","duration":"10","value":"50","type":"SERVICE"},{"dataTime":"2017-07-15 00:00:00","description":"Pacote","originNumber":"4499898484","value":"50","type":"SERVICE"}],"total":70.00}
-    ```
