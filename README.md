@@ -88,6 +88,6 @@ Exemplo de retorno esperado:
 
 ## Aplicação no Front-End.
 
-* Abra o arquivo index.html na pasta frases-front-end.
+* Abra o arquivo 'index.html' na pasta 'frases-front-end'.
 * Utilize o live-server ou um servidor local de sua preferência para visualizar o front-end.
 * As requisições serão realizadas automaticamente, desde que o projeto back-end esteja em execução.
