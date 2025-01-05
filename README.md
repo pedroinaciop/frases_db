@@ -12,10 +12,10 @@ O projeto é uma aplicação full-stack local que realiza requisições ao banco
 
 O projeto conta com as seguintes dependências:
 
-*Spring Boot Starter Data JPA
-*Spring Boot Starter Web
-*PostgreSQL Driver
-*Spring Boot Starter Test
+* Spring Boot Starter Data JPA
+* Spring Boot Starter Web
+* PostgreSQL Driver
+* Spring Boot Starter Test
 
 ## Preparando ambiente
 
