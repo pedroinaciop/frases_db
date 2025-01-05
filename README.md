@@ -73,7 +73,7 @@ Pronto. As requisições serão realizadas em http://localhost:8080/series/frase
 Tomcat started on port(s): 8080 (http)
 ```
 
-# Resposta da API
+## Resposta da API
 
 Exemplo de retorno esperado:
 
@@ -86,7 +86,7 @@ Exemplo de retorno esperado:
 }
 ```
 
-# Aplicação no Front-End.
+## Aplicação no Front-End.
 
 * Abra o arquivo index.html na pasta frases-front-end.
 * Utilize o live-server ou um servidor local de sua preferência para visualizar o front-end.
