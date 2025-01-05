@@ -4,7 +4,7 @@ O projeto é uma aplicação full-stack local que realiza requisições ao banco
 
 ## Tecnologias
 
-[![Minhas Habilidades](https://skillicons.dev/icons?i=spring,html,css,postgre)](https://skillicons.dev)
+[![Minhas Habilidades](https://skillicons.dev/icons?i=spring,html,css,postgres)](https://skillicons.dev)
 
 # Setup da aplicação (local)
 
@@ -34,14 +34,15 @@ spring.datasource.url=jdbc:postgresql://localhost/frases_series
 spring.datasource.username= seu usuário de acesso
 spring.datasource.password= sua senha de acesso
 spring.datasource.driver-class-name=org.postgresql.Driver
-hibernate.dialect=org.hibernate.dialect.HSQLDialect
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.format-sql=true
 ```
 
-E por último, realizar a inserção dos dados no seu banco de dados local conforme o arquivo 'dados_db.csv'
+E por último, utilize o arquivo 'dados_db.csv' para popular o banco de dados. Certifique-se de que os dados/campos estejam estruturados corretamente.
 
 ## Instalação da aplicação
 
@@ -72,20 +73,9 @@ Pronto. As requisições serão realizadas em http://localhost:8080/series/frase
 Tomcat started on port(s): 8080 (http)
 ```
 
-# Setup da aplicação com docker
+# Resposta da API
 
-## Pré-requisito
-
-Antes de rodar a aplicação é preciso garantir que as seguintes dependências estejam corretamente instaladas:
-
-```
-Java 8
-Maven 3.3.3 
-```
-
-# Resposta requisição
-
-O retorno esperada será uma frase de um filme/série determinado aleatóriamente pela aplicação
+Exemplo de retorno esperado:
 
 ```
 {
@@ -94,6 +84,10 @@ O retorno esperada será uma frase de um filme/série determinado aleatóriament
     "personagem": "Pablo Escobar",
     "poster": "https://cdn.pensador.com/img/imagens/na/rc/narcos_0_c.jpg?auto_optimize=low&width=655"
 }
-
 ```
 
+# Aplicação no Front-End.
+
+* Abra o arquivo index.html na pasta frases-front-end.
+* Utilize o live-server ou um servidor local de sua preferência para visualizar o front-end.
+* As requisições serão realizadas automaticamente, desde que o projeto back-end esteja em execução.
