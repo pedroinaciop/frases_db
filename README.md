@@ -86,8 +86,12 @@ Exemplo de retorno esperado:
 }
 ```
 
-## Aplicação no Front-End.
+## Aplicação no Front-End
 
 * Abra o arquivo 'index.html' na pasta 'frases-front-end'.
 * Utilize o live-server ou um servidor local de sua preferência para visualizar o front-end.
 * As requisições serão realizadas automaticamente, desde que o projeto back-end esteja em execução.
+
+## Imagem de exemplo
+
+![Web 1](https://raw.githubusercontent.com/pedroinaciop/frases_db/refs/heads/main/img_exemplo.png?token=GHSAT0AAAAAAC4Y7BLQAKN6IH5WQNE3ZD4QZ3Z2QMQ)
