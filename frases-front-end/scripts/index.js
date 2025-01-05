@@ -4,7 +4,7 @@ const btnSortear = document.querySelector('.btn-sortear');
 const fichaDescricao = document.getElementById('ficha-descricao');
 
 function carregarInfoSerie() {
-  getDados(`/series/frases`)
+  getDados(`/filmes-series/frases`)
       .then(data => {
         fichaDescricao.innerHTML = `
               <img src="${data.poster}" alt="${data.titulo}" />
