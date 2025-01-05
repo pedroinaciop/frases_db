@@ -94,4 +94,4 @@ Exemplo de retorno esperado:
 
 ## Imagem de exemplo
 
-![Web 1](https://raw.githubusercontent.com/pedroinaciop/frases_db/refs/heads/main/img_exemplo.png?token=GHSAT0AAAAAAC4Y7BLQAKN6IH5WQNE3ZD4QZ3Z2QMQ)
+![Web 1](https://github.com/pedroinaciop/frases_db/blob/main/img_exemplo.png?raw=true)
