@@ -64,7 +64,7 @@ Finalizado esse passo, vamos iniciar a aplicação:
 ```
 mvn spring-boot:run
 ```
-Pronto. As requisições serão realizadas em http://localhost:8080/series/frases
+Pronto. As requisições serão realizadas em http://localhost:8080/filmes-series/frases
 
 ```
 Tomcat started on port(s): 8080 (http)
