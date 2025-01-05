@@ -11,12 +11,11 @@ O projeto é uma aplicação full-stack local que realiza requisições ao banco
 ## Dependências
 
 O projeto conta com as seguintes dependências:
-```
-Spring Boot Starter Data JPA
-Spring Boot Starter Web
-PostgreSQL Driver
-Spring Boot Starter Test
-```
+
+*Spring Boot Starter Data JPA
+*Spring Boot Starter Web
+*PostgreSQL Driver
+*Spring Boot Starter Test
 
 ## Preparando ambiente
 
@@ -50,13 +49,11 @@ Primeiramente, faça o clone do repositório:
 
 ```
 https://github.com/pedroinaciop/frases_db.git
-
 ```
 Feito isso, acesse o projeto:
 
 ```
 cd frases_db
-
 ```
 É preciso compilar o código e baixar as dependências do projeto:
 
